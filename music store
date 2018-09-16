@@ -1,0 +1,531 @@
+#include<stdio.h>
+#include<unistd.h>
+void choice1();
+void choice2();
+void choice3();
+void billing(int,int);
+void bill(char c[30],int);
+void myflush(void);
+main()
+{
+	system("color 76");
+	int ch=0 ;
+	char ch2,response;
+	do
+	{
+	printf("\n\t\t\t MUSIC STORE \n");
+	printf("\n MENU \n 1. MUSIC INSTRUMENTS \n 2.MUSIC RECORDS'\n 3.MOVIES \n 	");
+	sleep(3);
+	printf("\n Enter your choice:");
+	scanf("%d",&ch);
+	if(ch==1)
+		choice1();
+	else if(ch==2)
+       choice2();
+    else 
+        choice3();
+    printf("\n do you want to continue (y/n) ");
+    getchar();
+    response=getchar();
+}while(response=='y');
+return 0;
+}
+void choice1()
+{
+	int ch2,ch3,ch4,ch5,ch6,ch7,ch8,response;
+	char gibson[30]="gibson";
+	int choice,choice1,choice2,choice3,choice4,choice5,choice6,choice7,choice8,choice9;
+	int che,che1,che2,che3;
+	printf("\n\n \t MUSIC STORE");
+	printf(" \n 1.Guitar\n 2.Keyboard\n3.Piano\n4.Flute\n5.Violin");
+	printf("\n enter your choice:");
+	scanf("%d",&ch2);
+	        		switch(ch2)
+	        		{
+	        			case 1:
+	        				printf("\n Guitars \n 1. Gibson guitar \n2. Giveson guitar \n 3.Delvin guitar");
+	        				printf("\n enter your choice:");
+	        				scanf("%d",&ch3);
+	        				switch(ch3)
+	        				{
+	        					case 1:
+	        						printf("\n brand:gibson(001)\n year:2016\n price:50000");
+	        						printf("\n do you want to buy (1=yes/0=n0)");
+	        						scanf("%d",&response);
+	        						if(response==1)
+	        						    printf("\n guitar added to cart");
+	        					     	billing(001,50000);
+	        					     	bill("gibson",50000);
+	        						
+	        						
+	        						break;
+	        					case 2:
+	        						printf("\n brand:giveson(002)\n year:2016\n price:30000");
+	        						printf("\n do you want to buy (1=yes/0=n0)");
+	        						scanf("%d",&choice1);
+	        						if(choice1==1)
+	        					    	printf("\n guitar added to cart");
+	        						    billing(002,30000);
+	        						break;
+	        					case 3:
+	        						printf("\n brand:delvin(003)\n year:2018\n price:10000");
+	        						printf("\n do you want to buy (1=yes/0=n0)");
+	        						scanf("%d",&choice2);
+	        						if(choice2==1)
+	        						     printf("\n guitar added to cart");
+	        						     billing(003,10000);
+	        						break;
+	        					default:
+	        						printf("\n invalid choice");
+	        						break;
+	        					}
+				            	break;
+						case 2:
+							printf("\n Keyboards \n 1.Casio keyboards\n 2.Yamaha keyboard\n3.K-board keyboard")	;
+							printf("\n enter your choice:");
+							scanf("%d",&ch4);
+							switch(ch4)
+							{
+								case1:
+									printf("\n brand:casio(004)\n year: 2017\n price:25000");
+									printf("\n do you want to buy(1=yes/0=n0)");
+									scanf("%d",&choice2);
+									if(choice2==1);
+									    printf("\n keyboard added to cart");
+									    billing(004,25000);
+									break;
+								case 2:
+									printf("\n brand:yamaha(005)\nyear:2015\nprice:40000");
+									printf("\n do you want to buy(1=yes/0=n0)");
+									scanf("%d",&choice3);
+									if(choice3==1);
+									    printf("\n keyboard added to cart");
+									    billing(005,40000);
+									break;
+								case 3:
+									printf("\n brand:key-board (006)\n year:2018 \n price:35000");
+									printf("\n do you want to buy(1=yes/0=n0)");
+									scanf("%d",&choice4);
+									if(choice4==1)
+									    printf("\n keyboard added to cart");
+									    billing(006,35000);
+									break;
+								default:
+									printf("\n enter correct choice");
+									break;
+									
+									
+									
+							}
+							break;
+						case 3:
+						    printf("\n piano \n 1.Bartlett \n 2.Clement\n 3.Everett");
+							printf("\n enter your choice:");
+							scanf("%d",&ch6);
+							switch(ch6)
+							{
+								case 1:
+									printf("\n brand:bartlett(007) \n year:2015 \n price:50000");
+									printf("\n do you want to buy(1=yes/0=n0) ");
+									scanf("%d",&choice5);
+									if(choice5==1);
+									   printf("\n piano added to cart");
+									   billing(007,50000);
+									   
+									break;
+								case 2:
+									printf("\n brand:clement(8) \n year:2017 \n price:100000");
+									printf("\n do you want to buy(1=yes/0=n0) ");
+									scanf("%d",&choice6);
+									if(choice6==1)
+									   printf("\n piano added to cart");
+									   billing(8,100000);
+									   
+									break;
+								case 3:
+									printf("\n brand:everett(9) \n year:2018 \n price:150000");
+									printf("\n do you want to buy(1=yes/0=n0) ");
+									scanf("%d",&choice6);
+									if(choice6==1)
+									   printf("\n piano added to cart");
+									   billing(9,150000);
+									break;
+								default:
+									printf("\n invalid choice");
+							        break;
+							}
+							break;
+						case 4:
+						    printf("\n flute \n 1.ridel \n 2. ponum flutes \n 3.bharathi musical flutes");
+						    printf("\n enter your choice:");
+							scanf("%d",&ch7);
+							switch(ch7)
+							{
+								case 1:
+									printf("\n brand:ridel(010) \n year: 2016 \n price:15000");
+									printf("\n do you wnat to buy (1=yes/0=n0)");
+									scanf("%d",&choice7);
+									if(choice7==1)
+								        printf("\n flute added to cart");
+								        billing(010,15000);
+									break;
+								case 2:
+									printf("\n brand:ponum flutes(011) \n year: 2018 \n price:25000");
+									printf("\n do you want to buy (1=yes/0=n0)");
+									scanf("%d",&choice8);
+									if(choice8==1)
+								        printf("\n flute added to cart");
+								        billing(011,25000);
+									break;
+								case 3:
+									printf("\n brand:bharathi musical flutes(012) \n year: 2017 \n price:10000");
+									printf("\n do you want to buy (1=yes/0=n0)");
+									scanf("%d",&choice9);
+									if(choice9==1)
+								        printf("\n flute added to cart");
+								        billing(012,10000);
+									break;
+								default:
+									printf("\n invalid choice");
+							        break;
+									
+								
+								     	
+								
+							}
+						case 5:
+							printf("\n violin \n 1.Knilling violins \n 2.Cremona \n Cecilo");
+							printf("\n enter your choice:");
+							scanf("%d",&ch8);
+							switch(ch8)
+							{
+							case 1:
+								printf("\n  brand:knilling violins(013) \n year:2015 \n price:100000");
+								printf("\n do you want to buy(1=yes/0=n0)");
+								scanf("%d",&che);
+								if(che==1)
+								    printf("\n violin is added");
+								     billing(013,100000);
+								break;
+							case 2:
+								printf("\n  brand:cremona(014)  \n year:2014\n price:50000");
+								printf("\n do you want to buy(1=yes/0=n0)");
+								scanf("%d",&che1);
+								if(che1==1)
+								    printf("\n violin is added");
+								     billing(014,50000);
+								break;
+							case 3:
+								printf("\n  brand:cecilo(015)  \n year:2018\n price:75000");
+								printf("\n do you want to buy(1=yes/0=n0)");
+								scanf("%d",&che2);
+								if(che2==1)
+								    printf("\n violin is added");
+								     billing(015,75000);
+								break;
+							default:
+								printf("\n invalid choice");
+								break;
+								
+								
+								
+									
+							}
+							break;
+						default:
+						    printf("\n invalid choice");
+						    break;
+						}
+					}
+							
+									
+									
+									
+								
+void choice2()
+{
+	int ms1,wes1,wes2,wes3;
+	int var1=0,var2=0,var3=0,var4=0,var5,var6,var7,var8,var9;
+		printf("\n\n \t MUSIC STORE");
+	    printf(" \n menu \n 1.Western \n 2. HINDUSTANIl \n 3.Carnatic");
+	    scanf("%d",&ms1);
+	    switch(ms1)
+	    {
+	    	case 1:
+	    		printf("\n western ");
+	    		printf("\n 1.My heart will go on (titanic) \n 2.Say you won't let go  \n3.Castle of glass");
+	    		printf("\n enter your choice:");
+	    		scanf("%d",&wes1);
+	    		switch(wes1)
+	    		{
+	    			case 1:
+	    				printf("\n album:My heart will go on (101) \n year:1997 \n price:250");
+	    				printf("\n do you want to buy:(1=yes/0=n0)");
+	    				scanf("%d",&var1);
+	    				if(var1==1)
+	    				    printf("\n product added to cart");
+	    				    billing(101,250);
+								break;
+	    				    
+	    				break;
+	    			case 2:
+	    				printf("\n album:Say you won't let go (102) \nyear:2016 \n price:200");
+	    				printf("/n do you want to buy (1=yes/0=n0)");
+	    				scanf("%d",&var2);
+	    				if(var2==1)
+	    				    printf("\n product added to cart");
+	    				    billing(102,200);
+	    				break;
+	    			case 3:
+	    				printf("\n album:Castle of glass (103)\n year:2012 \n price:150");
+	    				printf("\n do you want to buy:(1=yes/0=n0)");
+	    				scanf("%d",&var3);
+	    				if(var3==1)
+	    				   printf("\n product added to cart");
+	    				   billing(103,150);
+	    				break;
+				
+				}
+				break;
+			case 2:
+				printf("\n HINDUSTANI ");
+				printf("\n 1.PANCHWATI MANA BHAVANA UPAVANA \n 2. PAYALA BAJE MORI JHANJHARA PYARE\n3. KATE NA BIRAHA KI RAAT");
+				printf("\n enter your choice:");
+				scanf("%d",&wes2);
+				switch(wes2)
+				{
+					case 1:
+						printf("\n album :PANCHWATI MANA BHAVANA UPAVANA(104) \n year:1992 \n price:400");
+						printf("\n do you want to buy (1=yes/0=n0)");
+						scanf("%d",&var4);
+						if(var4==1)
+						    printf("\n album added to cart");
+						    billing(104,400);
+						printf("\n do you want to continue shopping");
+						break;
+					case 2:
+						printf("\n album : PAYALA BAJE MORI JHANJHARA PYARE(105) \n year:17TH CENTURY \n price:500");
+						printf("\n do you want to buy (1=yes/0=n0)");
+						scanf("%d",&var5);
+						if(var5==1)
+						    printf("\n album added to cart");
+						    billing(105,500);
+						printf("\n do you want to continue shopping");
+						break;
+					case 3:
+						printf("\n album :KATE NA BIRAHA KI RAAT (106)\n year: 1960\n price:400");
+						printf("\n do you want to buy (1=yes/0=n0)");
+						scanf("%d",&var6);
+						if(var6==1)
+						    printf("\n album added to cart");
+						    billing(106,400);
+						printf("\n do you want to continue shopping");
+						break;
+					default:
+						printf("\n wrong choice");
+						break;
+				}
+				break;
+			case 3:
+				printf("\n carnatic");
+				printf("\n 1.Kurai Ondrum \n2.Vatapi\n3.Thaye Yashoda");
+				printf("\n enter your choice");
+				scanf("%d",&wes3);
+				switch(wes3)
+				{
+					case 1:
+						printf("\n album:Kurai Ondrum(107) \n year:2002 \n price:450");
+						printf("\n do you want to buy (1=yes/0=n0) ");
+						scanf("%d",&var7);
+						if(var7==1)
+						{
+						    printf("\n product added to cart");
+						    billing(107,450);
+						    
+						    
+						}
+						break;
+					case 2:
+						printf("\n album :Vatapi(108) \n year:2010 \n price:400");
+						printf("\n do you want to buy (1=yes/0=n0)");
+						scanf("%d",&var8);
+						if(var8==1)
+						    printf("\n album added to cart");
+						    billing(108,400);
+						printf("\n do you want to continue shopping");
+						break;
+					case 3:
+						printf("\n album :Thaye Yashoda(109) \n year:2005 \n price:500");
+						printf("\n do you want to buy (1=yes/0=n0)");
+						scanf("%d",&var9);
+						if(var9==1)
+						    printf("\n album added to cart");
+						    billing(109,500);
+						printf("\n do you want to continue shopping");
+						break;
+					default:
+						printf("\n wrong choice");
+						break;
+						
+				}
+				break;
+			default:
+				printf("\n wrong choice");
+				break;
+				
+						
+						
+				}
+				
+	    		
+		}
+void choice3()
+{
+	int es1,es2,es3,es4;
+	int ms1,ms2,ms3,ms4,ms5,ms6,ms7,ms8,ms9;
+	printf("\n\t\t music store");
+	printf("\n movies");
+	printf("categories \n 1. romantic \n 2. sci-fi \n 3. action");
+	printf("\n enter your choice:");
+	scanf("%d",&es1);
+	switch(es1)
+	{
+		case 1:
+			printf("\n romantic");
+			printf("\n movies \n 1.titanic \n 2.A walk to remember \n 3.the fault in our stars");
+			scanf("%d ",&es2);
+			switch(es2)
+			{
+				case 1:
+					printf("\n name:titanic(201) \n year:1997 \n price:1000");
+					printf("\n do you want to buy (1=yes/0=n0) :");
+					scanf("%d",&ms1);
+					if(ms1== 1)
+					   printf("\n product added to cart");
+					   billing(201,1000);
+					break;
+				case 2:
+					printf("\n name: A walk to remember(202)\n year:2002 \n price:400");
+					printf("\n do you want to buy (1=yes/0=n0) :");
+					scanf("%d",&ms2);
+					if(ms2== 1)
+					   printf("\n product added to cart");
+					   billing(202,400);
+					break;
+				case 3:
+					printf("\n name:the fault in our stars(203) \n year:2014 \n price:400");
+					printf("\n do you want to buy (1=yes/0=n0) :");
+					scanf("%d",&ms3);
+					if(ms3== 1)
+					   printf("\n product added to cart");
+					   billing(203,400);
+					break;
+			}
+			break;
+		case 2:
+			printf("\n si-fi ");
+			printf("\n movies \n 1.interstellar \n 2.inception \3.minority report");
+			printf("\n enter your choice:");
+			scanf("%d",&es3);
+			switch(es3)
+			{
+				case 1:
+					printf("\n name:interstellar(204) \n year:2014 \n price:800");
+					printf("\n do you want to buy (1=yes/0=n0) :");
+					scanf("%d",&ms4);
+					if(ms4==1)
+					   printf("\n product added to cart");
+					   billing(204,800);
+					break;
+				case 2:
+					printf("\n name: inception(205)\n year:2010 \n price:800");
+					printf("\n do you want to buy (1=yes/0=n0) :");
+					scanf("%d",&ms5);
+					if(ms5==1)
+					   printf("\n product added to cart");
+					   billing(205,800);
+					break;
+				case 3:
+					printf("\n name:minority report(206) \n year:2002 \n price:600");
+					printf("\n do you want to buy (1=yes/0=n0) :");
+					scanf("%d",&ms6);
+					if(ms6==1)
+					   printf("\n product added to cart");
+					   billing(206,1000);
+					break;
+				
+					
+					
+			}
+			break;
+		case 3:
+			printf("\n action ");
+			printf("\n movies \n 1.top gun \n 2.Batman trilogy \n 3. Starwars");
+			printf("\n enter your choice:");
+			scanf("%d",&es4);
+			switch(es4)
+			{
+				case 1:
+					printf("\n name:top gun(207) \n year: 1986 \n price: 600");
+					printf("\n do you want to buy (1=yes/0=n0) :");
+					scanf("%d",&ms7);
+					if(ms7==1)
+					   printf("\n product added to cart");
+					   billing(207,600);
+					break;
+				case 2:
+					printf("\n name:Batman trilogy(208) \n year:2008 \n price:1200");
+					printf("\n do you want to buy (1=yes/0=n0) :");
+					scanf("%d",&ms8);
+					if(ms8==1)
+					   printf("\n product added to cart");
+					   billing(208,1200);
+					break;
+				case 3:
+					printf("\n name: Starwars(209)\n year:2017 \n price:600");
+					printf("\n do you want to buy (1=yes/0=n0) :");
+					scanf("%d",&ms9);
+					if(ms9==1)
+					   printf("\n product added to cart");
+					   billing(209,600);
+					break;
+					
+					
+					
+			}
+			break;
+		default:
+		    printf("\n  wrong choice");
+		    break;
+	}
+}
+void billing(int a,int b)
+{
+	int j;
+	int code;
+	int sum,i,c;
+	printf("\n\t\t\t music store bill");
+	printf("\n enter the quantity");
+	scanf("%d",&c);
+	printf("\n s.no \t product code \t price");
+	for(i=1;i<c;i++)
+	{
+	printf("\n %d \t %d \t\t %d ",i,a,b);
+	sum+=b;
+	
+}
+printf("\n \t total cost: %d",sum);
+}
+
+void bill(char c[30],int d)
+{
+	int f,sno=1;
+	printf("\n \t\t billing");
+	printf("\n enter the quantity ");
+	scanf("%d",&f);
+	printf("\n sno \t product name \t price ");
+	printf("\n %d\t %s \t %d",sno,c,d*f);
+	sno++;
+}
+
+
